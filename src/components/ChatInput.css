@@ -3,9 +3,34 @@
   padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;
-  position: relative; /* Changed from sticky to relative for better mobile behavior */
-  background-color: #f0f0f0; /* Light background for input area */
+  position: relative;
+  background-color: #f0f0f0;
   z-index: 1000;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--whatsapp-input-bg);
+  border-radius: 25px;
+  padding: 0.2rem 0.5rem; /* Adjusted padding */
+}
+
+input {
+  flex: 1;
+  resize: none;
+  padding: 0.75rem 0.5rem; /* Adjusted padding */
+  border: none;
+  border-radius: 25px; 
+  font-size: 1rem; 
+  transition: all 0.2s ease-in-out; 
+  box-shadow: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .input-wrapper {
@@ -18,7 +43,7 @@
 }
 
 input {
-  flex: 1;
+  flex: 1; /* Allow input to grow and shrink */
   resize: none;
   padding: 0.75rem 1rem;
   border: none; /* Remove border */
@@ -26,7 +51,6 @@ input {
   font-size: 1rem; 
   transition: all 0.2s ease-in-out; 
   box-shadow: none; /* Remove shadow */
-  width: 100%; /* Make input full width */
   background-color: transparent; /* Transparent background */
 
   &:focus {
@@ -75,17 +99,14 @@ input {
   font-size: 1rem; 
   transition: all 0.2s ease-in-out; 
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); 
-  width: 100%; /* Make input full width */
 
   &:focus {
-    border-color: #007bff; 
-    box-shadow: 0 1px 5px rgba(0, 123, 255, 0.2); 
     outline: none;
   }
 }
 
 button {
-  background-color: #007bff; 
+  background-color: var(--whatsapp-light-green); 
   border: none;
   border-radius: 50%;
   width: 48px; 
