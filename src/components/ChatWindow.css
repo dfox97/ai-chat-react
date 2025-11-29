@@ -1,0 +1,46 @@
+.chat-window {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #f9f9f9; /* Light background for chat messages area */
+  border-bottom: 1px solid #eee;
+  display: flex; /* Use flexbox for message alignment */
+  flex-direction: column; /* Stack messages vertically */
+}
+
+.message {
+  display: flex;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.message.sender {
+  justify-content: flex-end; /* Align sender messages to the right */
+}
+
+.message.receiver {
+  justify-content: flex-start; /* Align receiver messages to the left */
+}
+
+.message-content {
+  max-width: 70%; /* Limit message bubble width */
+  padding: 0.75rem 1rem;
+  border-radius: 1.2rem; /* Rounded corners for bubbles */
+  word-wrap: break-word; /* Break long words */
+}
+
+.message.sender .message-content {
+  background-color: #007bff; /* Blue background for sender */
+  color: white;
+  border-bottom-right-radius: 0.3rem; /* Sharpen corner for sender */
+}
+
+.message.receiver .message-content {
+  background-color: #e2e6ea; /* Light grey background for receiver */
+  color: #333;
+  border-bottom-left-radius: 0.3rem; /* Sharpen corner for receiver */
+}
+
+.message strong {
+  display: none; /* Hide sender name inside bubble, can be shown above if needed */
+}

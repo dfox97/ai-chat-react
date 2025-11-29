@@ -26,12 +26,16 @@ function App() {
   if (!data || isLoading) return <p>Loading...</p>
 
   return (
-    <div>
-      <h1> Simple chat app</h1>
-      <ChatWindow messages={data} />
-      <ChatInput />
+    <div className="App">
+      <div className="chat-wrapper">
+        <div className="chat-window-content">
+          <ChatWindow messages={data} />
+        </div>
+        <ChatInput />
+      </div>
     </div>
   )
 }
+
 
 export default App
