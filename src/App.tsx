@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { useEffect, useRef } from 'react';
 import './App.css'
 import ChatWindow, { type ChatWindowProps } from './components/ChatWindow'
 import ChatInput from './components/ChatInput';
@@ -21,20 +22,26 @@ function App() {
     queryFn: fetchMockMessages,
   });
 
-  if (error) return <p>Error loading messages</p>
+  const chatWindowRef = useRef<HTMLDivElement>(null);
 
-  if (!data || isLoading) return <p>Loading...</p>
+  useEffect(() => {
+    if (chatWindowRef.current) {
+      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
+    }
+  }, [data]);
+
+  if (error) return <p>Error loading messages</p>;
+
+  if (!data || isLoading) return <p>Loading...</p>;
 
   return (
     <div className="App">
       <div className="chat-wrapper">
-        <div className="chat-window-content">
-          <ChatWindow messages={data} />
-        </div>
+        <ChatWindow messages={data} chatWindowRef={chatWindowRef} />
         <ChatInput />
       </div>
     </div>
-  )
+  );
 }
 
 

@@ -14,7 +14,7 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
   width: 100%;
   max-width: 700px; /* Increased max-width for a wider chat experience */
-  height: 90vh; /* Take up most of the viewport height */
+  height: 100%; /* Take up full height of the App container */
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Hide overflow content */

@@ -9,12 +9,12 @@ interface Message {
 
 export interface ChatWindowProps {
   messages: Message[];
+  chatWindowRef: React.RefObject<HTMLDivElement | null>;
 }
 
-
-const ChatWindow: React.FC<ChatWindowProps> = ({ messages }) => {
+const ChatWindow: React.FC<ChatWindowProps> = ({ messages, chatWindowRef }) => {
   return (
-    <div className="chat-window">
+    <div className="chat-window" ref={chatWindowRef}>
       {messages.map((message) => (
         <div
           key={message.id}
@@ -26,7 +26,7 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages }) => {
         </div>
       ))}
     </div>
-  )
+  );
 };
 
 export default ChatWindow;

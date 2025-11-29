@@ -5,7 +5,8 @@
   background-color: #f9f9f9; /* Light background for chat messages area */
   border-bottom: 1px solid #eee;
   display: flex; /* Use flexbox for message alignment */
-  flex-direction: column; /* Stack messages vertically */
+  flex-direction: column-reverse; /* Stack messages vertically, newest at bottom */
+  justify-content: flex-start; /* Align content to the bottom */
 }
 
 .message {
