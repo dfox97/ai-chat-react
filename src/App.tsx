@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import './App.css'
 import ChatWindow, { type ChatWindowProps } from './components/ChatWindow'
+import ChatInput from './components/ChatInput';
 
 export const fetchMockMessages = async (): Promise<ChatWindowProps['messages']> => {
   return new Promise((resolve) => {
@@ -28,6 +29,7 @@ function App() {
     <div>
       <h1> Simple chat app</h1>
       <ChatWindow messages={data} />
+      <ChatInput />
     </div>
   )
 }
