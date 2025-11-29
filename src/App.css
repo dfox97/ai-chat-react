@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: #ece5dd; /* WhatsApp chat background */
+  background-color: #ece5dd; 
 }
 
 .chat-header {
@@ -47,14 +47,14 @@
 }
 
 .chat-wrapper {
-  background-color: #ffffff; /* White background for the chat window */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+  background-color: #ffffff; 
+  border-radius: 15px; 
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15); 
   width: 100%;
-  height: 100%; /* Take up full height of the App container */
+  height: 100%; 
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Hide overflow content */
+  overflow: hidden; 
 }
 
 /* Responsive adjustments */
@@ -64,8 +64,8 @@
   }
 
   .chat-wrapper {
-    height: 100vh; /* Full height on mobile */
-    border-radius: 0; /* No border-radius on full-height mobile */
+    height: 100vh; 
+    border-radius: 0; 
     max-width: 100%;
   }
 }

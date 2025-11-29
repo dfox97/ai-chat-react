@@ -1,9 +1,9 @@
 import React from 'react';
 import './ChatWindow.css';
 
-interface Message {
+export interface Message {
   id: number;
-  sender: string;
+  role: 'user' | 'assistant';
   content: string;
 }
 
@@ -18,10 +18,10 @@ const ChatWindow: React.FC<ChatWindowProps> = ({ messages, chatWindowRef }) => {
       {messages.map((message) => (
         <div
           key={message.id}
-          className={`message ${message.sender === 'Alice' ? 'sender' : 'receiver'}`}
+          className={`message ${message.role === 'user' ? 'sender' : 'receiver'}`}
         >
           <div className="message-content">
-            <strong>{message.sender}:</strong> {message.content}
+            <strong>{message.role === 'user' ? 'You' : 'Assistant'}:</strong> {message.content}
           </div>
         </div>
       ))}

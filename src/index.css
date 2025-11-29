@@ -2,7 +2,7 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrolling on the body */
+  overflow: hidden; 
 }
 
 body {
@@ -11,8 +11,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ece5dd; /* WhatsApp-like background color */
-  color: #1f2937; /* Default text color */
+  background-color: #ece5dd; 
+  color: #1f2937; 
 }
 
 :root {

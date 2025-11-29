@@ -4,22 +4,22 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  background-color: #ece5dd; /* WhatsApp chat background */
+  background-color: #ece5dd; 
 }
 
 .message {
   display: flex;
   margin-bottom: 0.5rem;
   line-height: 1.4;
-  max-width: 80%; /* Limit message bubble width */
+  max-width: 80%; 
 }
 
 .message.sender {
-  align-self: flex-end; /* Align sender messages to the right */
+  align-self: flex-end; 
 }
 
 .message.receiver {
-  align-self: flex-start; /* Align receiver messages to the left */
+  align-self: flex-start; 
 }
 
 .message-content {
