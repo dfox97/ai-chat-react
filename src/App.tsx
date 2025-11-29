@@ -36,8 +36,11 @@ function App() {
 
   return (
     <div className="App">
+      <div className="chat-header">Chat</div>
       <div className="chat-wrapper">
-        <ChatWindow messages={data} chatWindowRef={chatWindowRef} />
+        <div className="chat-window-container">
+          <ChatWindow messages={data} chatWindowRef={chatWindowRef} />
+        </div>
         <ChatInput />
       </div>
     </div>

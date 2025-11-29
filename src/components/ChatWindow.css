@@ -1,47 +1,70 @@
 .chat-window {
   flex-grow: 1;
   overflow-y: auto;
-  padding: 1rem;
-  background-color: #f9f9f9; /* Light background for chat messages area */
-  border-bottom: 1px solid #eee;
-  display: flex; /* Use flexbox for message alignment */
-  flex-direction: column-reverse; /* Stack messages vertically, newest at bottom */
-  justify-content: flex-start; /* Align content to the bottom */
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #ece5dd; /* WhatsApp chat background */
 }
 
 .message {
   display: flex;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   line-height: 1.4;
+  max-width: 80%; /* Limit message bubble width */
 }
 
 .message.sender {
-  justify-content: flex-end; /* Align sender messages to the right */
+  align-self: flex-end; /* Align sender messages to the right */
 }
 
 .message.receiver {
-  justify-content: flex-start; /* Align receiver messages to the left */
+  align-self: flex-start; /* Align receiver messages to the left */
 }
 
 .message-content {
-  max-width: 70%; /* Limit message bubble width */
-  padding: 0.75rem 1rem;
-  border-radius: 1.2rem; /* Rounded corners for bubbles */
-  word-wrap: break-word; /* Break long words */
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word;
+  position: relative;
+  font-size: 0.9rem;
 }
 
 .message.sender .message-content {
-  background-color: #007bff; /* Blue background for sender */
-  color: white;
-  border-bottom-right-radius: 0.3rem; /* Sharpen corner for sender */
+  background-color: var(--whatsapp-bubble-sent);
+  color: var(--whatsapp-text-dark);
+  border-bottom-right-radius: 0.1rem;
 }
 
 .message.receiver .message-content {
-  background-color: #e2e6ea; /* Light grey background for receiver */
-  color: #333;
-  border-bottom-left-radius: 0.3rem; /* Sharpen corner for receiver */
+  background-color: var(--whatsapp-bubble-received);
+  color: var(--whatsapp-text-dark);
+  border-bottom-left-radius: 0.1rem;
 }
 
 .message strong {
-  display: none; /* Hide sender name inside bubble, can be shown above if needed */
+  display: none;
+}
+
+/* Optional: Add a small triangle for message bubbles */
+.message.sender .message-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: -7px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid var(--whatsapp-bubble-sent);
+  border-left: 8px solid transparent;
+}
+
+.message.receiver .message-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid var(--whatsapp-bubble-received);
+  border-right: 8px solid transparent;
 }
