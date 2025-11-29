@@ -1,19 +1,24 @@
 import React from 'react';
 
-export interface ChatWindowProps {
-  messages: { id: number; text: string; sender: string }[];
+interface Message {
+  id: number;
+  sender: string;
+  content: string;
 }
+
+export interface ChatWindowProps {
+  messages: Message[];
+}
+
 
 const ChatWindow: React.FC<ChatWindowProps> = ({ messages }) => {
   return (
     <div>
-      <ul>
-        {messages.map((message) => (
-          <li key={message.id}>
-            <strong>{message.sender}:</strong> {message.text}
-          </li>
-        ))}
-      </ul>
+      {messages.map((message) => (
+        <p key={message.id}>
+          <strong>{message.sender}:</strong> {message.content}
+        </p>
+      ))}
     </div>
   )
 };
